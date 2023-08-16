@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Footer from "../layouts/Footer";
 import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
-import { db } from "../components/firebase/firebase";
+import { db } from "../firebase/firebase";
 import BlogSection from "../layouts/BlogSection";
 import { toast } from "react-toastify";
 

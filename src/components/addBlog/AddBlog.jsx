@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { db } from "../firebase/firebase";
+import { db } from "../../firebase/firebase";
 import ReactTagInput from "@pathofdev/react-tag-input";
 import "@pathofdev/react-tag-input/build/index.css";
 import { useNavigate, useParams } from "react-router-dom";

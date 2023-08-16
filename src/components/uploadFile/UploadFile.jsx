@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import { storage } from "../firebase/firebase";
+import { storage } from "../../firebase/firebase";
 import { toast } from "react-toastify";
 import PropTypes from "prop-types";
 
