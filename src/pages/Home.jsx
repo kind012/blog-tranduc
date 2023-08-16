@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Footer from "../layouts/Footer";
-import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
+import { collection, deleteDoc, doc, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import BlogSection from "../layouts/BlogSection";
 import { toast } from "react-toastify";
@@ -32,26 +32,31 @@ const Home = () => {
   }, [filterWord, blogs]);
 
   useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        setLoading(true);
-        const querySnapshot = await getDocs(collection(db, "blogs"));
-        let list = [];
-        let tags = [];
-        querySnapshot.forEach((doc) => {
-          tags.push(...doc.get("tags"));
-          list.push({ id: doc.id, ...doc.data() });
-        });
-        const uniqueTags = [...new Set(tags)];
-        setTags(uniqueTags);
-        setBlogs(list);
-        setLoading(false);
-      } catch (err) {
-        console.log(err);
-      }
+    let unsubscribe;
+    const fetchBlogs = () => {
+      setLoading(true);
+      unsubscribe = onSnapshot(
+        collection(db, "blogs"),
+        (querySnapshot) => {
+          let list = [];
+          let tags = [];
+          querySnapshot.forEach((doc) => {
+            tags.push(...doc.get("tags"));
+            list.push({ id: doc.id, ...doc.data() });
+          });
+          const uniqueTags = [...new Set(tags)];
+          setTags(uniqueTags);
+          setBlogs(list);
+          setLoading(false);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
     };
+    fetchBlogs();
     return () => {
-      fetchBlogs();
+      return unsubscribe();
     };
   }, []);
 
