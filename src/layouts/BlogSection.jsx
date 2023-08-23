@@ -28,10 +28,7 @@ const BlogSection = ({ filteredBlog, handleDelete }) => {
                 </Link>
               </div>
               <div className="pt-[30px] py-[15px] px-[15px]">
-                <a
-                  href={`/detail/${item.id}`}
-                  className=" text-[#151619] text-[22px] font-bold  "
-                >
+                <a className=" text-[#151619] text-[22px] font-bold  ">
                   {item.title}
                 </a>
               </div>
