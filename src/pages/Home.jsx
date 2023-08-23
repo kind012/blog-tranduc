@@ -88,7 +88,7 @@ const Home = () => {
           <div className="pt-[15px]">
             {loading ? (
               <div className="flex items-center justify-center">
-                <img src="/images/loading.gif" alt="Loading" />
+                <span>loading...</span>
               </div>
             ) : (
               <BlogSection
