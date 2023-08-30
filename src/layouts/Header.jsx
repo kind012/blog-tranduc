@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Header = ({ active, setActive }) => {
   return (
-    <div className="container mx-auto px-4 flex md:px-[70px]  flex-row md:flex-wrap justify-between lg:items-center pt-[10px] md:pt-1">
+    <div className="container mx-auto px-4 flex md:px-[70px]  flex-row md:flex-wrap justify-between items-center pt-[10px] md:pt-1">
       <div>
         <a href="/">
           <p className="font-bold text-[20px]">Bloger.</p>
