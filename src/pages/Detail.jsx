@@ -24,7 +24,7 @@ const Detail = () => {
           <h1 className="text-black ">{blog?.title}</h1>
         </div>
         <div className="flex flex-row justify-center mt-3 mb-3">
-          <div className="mx-2 text-gray-400 ">
+          <div className="mx-2 text-gray-400">
             CATEGORY BY{" "}
             <span className="after:content-['|'] mx-3 relative -top-[1]"></span>
             <span className="text-[#00afab]  ">{blog?.category}</span>
@@ -36,7 +36,7 @@ const Detail = () => {
           <img
             src={blog?.imgUrl}
             alt={blog?.title}
-            className="w-[880px] h-[403px] rounded-2xl m-auto mb-[30px]"
+            className="w-[880px] h-[403px] rounded-2xl m-auto mb-[30px] md:object-cover md:w-full md:h-full"
           />
         </div>
         <div>

@@ -89,13 +89,13 @@ const AddEditBlog = ({ setActive }) => {
   };
 
   return (
-    <div className="container mb-4">
+    <div className="mb-4 lg:container">
       <div className="text-center">
         <h2 className="text-[25px] font-Inter mb-8 italic font-bold ">
           {id ? "Update Blog" : "Create Blog"}
         </h2>
       </div>
-      <div className="ml-[370px] w-[50%] items-center justify-center ">
+      <div className="lg:ml-[270px] md:w-fit lg:w-[50%] items-center justify-center ">
         <form
           className="px-8 pt-6 pb-8 mb-4 bg-white rounded shadow-md "
           onSubmit={handleSubmit}

@@ -4,18 +4,18 @@ import { excerpt } from "../utils/index";
 import PropTypes from "prop-types";
 const BlogSection = ({ filteredBlog, handleDelete }) => {
   return (
-    <div className="mb-[20px]">
-      <div className="w-[450px] ">
-        <h2 className="py-2 mb-4 text-[60px] text-[#151619] font-light leading-[72px]">
+    <div className="lg:mb-[20px] md:mb-[30px]">
+      <div className="lg:w-[450px] md:w-[240px]">
+        <h2 className="py-2 mb-4 lg:text-[60px] md:text-lg text-[#151619] font-light lg:leading-[72px]">
           See what we’ve <br />
           <strong className="text-[60px] font-bold">written lately</strong>
         </h2>
       </div>
-      <div className="flex flex-wrap gap-4 ">
+      <div className="md:flex gap-x-4 lg:flex-row md:flex-col ">
         {filteredBlog?.map((item) => {
           return (
             <div
-              className="flex-wrap rounded-lg shadow-md w-widths "
+              className="flex-wrap rounded-lg shadow-md lg:w-widths md:w-fit md:mb-[20px]"
               key={item.id}
             >
               <div className="relative max-w-xs overflow-hidden bg-no-repeat bg-cover rounded-3xl">

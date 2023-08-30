@@ -74,10 +74,10 @@ const Home = () => {
 
   return (
     <>
-      <div className="container mt-[80px]">
-        <div className="pb-[130px]">
-          <h1 className="max-w-[1381px] text-[92px] font-light leading-[110px]">
-            <strong className="w-[760px] text-[92px] font-bold">
+      <div className="container lg:mt-[80px]">
+        <div className="pb-[94px]">
+          <h1 className="lg:max-w-[1200px] md:max-w-[250px]  md:text-[45px] lg:text-[97px] font-light lg:leading-[110px] md:overflow-hidden">
+            <strong className="lg:w-[760px] md:w-[420px] lg:text-[92px] md:text-[52px] font-bold">
               Hey, we&apos;re Bloger
             </strong>
             .Let see Stories
@@ -85,7 +85,7 @@ const Home = () => {
         </div>
         <div className="border-b-2 border-spacing-36"></div>
         <div>
-          <div className="pt-[15px]">
+          <div className="lg:pt-[15px]">
             {loading ? (
               <div className="flex items-center justify-center">
                 <span>loading...</span>
@@ -98,8 +98,8 @@ const Home = () => {
             )}
           </div>
 
-          <div className="flex flex-col items-center mt-12">
-            <div className="flex gap-3 mb-12">
+          <div className="items-center mt-12 md:mt-6 md:flex lg:flex-row md:flex-col">
+            <div className="mb-12 lg:gap-3 lg:flex md:mb-16">
               {tags.map((tag, index) => {
                 return (
                   <button
