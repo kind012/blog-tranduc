@@ -158,7 +158,7 @@ const AddEditBlog = ({ setActive }) => {
           />
           <div className="flex items-center justify-center">
             <button
-              className="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 "
+              className="text-white hover:duration-300 bg-black hover:bg-white hover:text-black font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 border-[2px] "
               type="submit"
               disabled={(progress !== null) & (progress < 100)}
             >

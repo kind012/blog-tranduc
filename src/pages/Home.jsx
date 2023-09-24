@@ -98,7 +98,7 @@ const Home = () => {
             )}
           </div>
 
-          <div className="items-center mt-12 md:mt-6 md:flex lg:flex-row md:flex-col">
+          <div className="flex items-center mt-12 md:mt-6 lg:flex-row md:flex-col lg:justify-center">
             <div className="mb-12 lg:gap-3 lg:flex md:mb-16">
               {tags.map((tag, index) => {
                 return (
