@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { excerpt } from "../utils/index";
 import PropTypes from "prop-types";
+
 const BlogSection = ({ filteredBlog, handleDelete }) => {
   return (
     <div className="lg:mb-[20px] md:mb-[30px]">
@@ -11,11 +12,12 @@ const BlogSection = ({ filteredBlog, handleDelete }) => {
           <strong className="text-[60px] font-bold">written lately</strong>
         </h2>
       </div>
-      <div className="md:flex gap-x-4 lg:flex-row md:flex-col ">
+
+      <div className="grid grid-cols-4 col-span-2 lg:w-full gap-x-4">
         {filteredBlog?.map((item) => {
           return (
             <div
-              className="flex-wrap rounded-lg shadow-md lg:w-widths md:w-fit md:mb-[20px]"
+              className="rounded-lg shadow-md  lg:w-fit md:mb-[20px]"
               key={item.id}
             >
               <div className="relative max-w-xs overflow-hidden bg-no-repeat bg-cover rounded-3xl">
@@ -28,31 +30,21 @@ const BlogSection = ({ filteredBlog, handleDelete }) => {
                 </Link>
               </div>
               <div className="pt-[30px] py-[15px] px-[15px]">
-                <a className=" text-[#151619] text-[22px] font-bold  ">
+                <a className="text-[#151619] text-[22px] font-bold line-clamp-2">
                   {item.title}
                 </a>
               </div>
               <div className="px-4 mb-5 flex-1 min-h-[100px] line-clamp-4 font-Inter pt-[10px]">
                 {excerpt(item.description, 120)}
               </div>
-              <div className="px-4 h-[50px]">
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    marginBottom: "20px",
-                    cursor: "pointer",
-                  }}
-                >
-                  <FontAwesomeIcon
-                    icon={["fa", "trash"]}
-                    onClick={() => handleDelete(item.id)}
-                  />
-                  <Link to={`/update/${item.id}`}>
-                    <FontAwesomeIcon icon={["fa", "edit"]} />
-                  </Link>
-                </div>
+              <div className="flex px-4 mb-5 lg:justify-between border-t-slate-200 h-15">
+                <FontAwesomeIcon
+                  icon={["fa", "trash"]}
+                  onClick={() => handleDelete(item.id)}
+                />
+                <Link to={`/update/${item.id}`}>
+                  <FontAwesomeIcon icon={["fa", "edit"]} />
+                </Link>
               </div>
             </div>
           );
