@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { storage } from "../../firebase/firebase";
-import { toast } from "react-toastify";
+import { toast } from "sonner";
+
 import PropTypes from "prop-types";
 
 const UploadFile = (props) => {
@@ -35,8 +36,7 @@ const UploadFile = (props) => {
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadUrl) => {
-            // toast.info("Image upload to firebase successfully");
-            toast.info("Image upload to firebase successfully");
+            toast.message("Image upload to firebase successfully");
             setForm((prev) => ({ ...prev, imgUrl: downloadUrl }));
           });
         }
@@ -91,7 +91,7 @@ const UploadFile = (props) => {
 export default UploadFile;
 
 UploadFile.propTypes = {
-  file: PropTypes.string,
+  file: PropTypes.object,
   setProgress: PropTypes.func,
   setForm: PropTypes.func,
   setFile: PropTypes.func,

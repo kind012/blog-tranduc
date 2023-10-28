@@ -3,7 +3,7 @@ import Footer from "../layouts/Footer";
 import { collection, deleteDoc, doc, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import BlogSection from "../layouts/BlogSection";
-import { toast } from "react-toastify";
+import { toast } from "sonner";
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
@@ -64,7 +64,7 @@ const Home = () => {
     try {
       setLoading(true);
       await deleteDoc(doc(db, "blogs", id));
-      toast.success("Blog delete successfully");
+      toast.success("Deleted blog successfully");
 
       setLoading(false);
     } catch (err) {

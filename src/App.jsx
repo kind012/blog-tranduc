@@ -3,12 +3,12 @@ import Detail from "./pages/Detail";
 import AddEditBlog from "./components/addBlog/AddBlog";
 import NotFound from "./pages/NotFound";
 import { Routes, Route } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 import Header from "./layouts/Header";
 import { useEffect, useState } from "react";
 import "./utils/fontawesome";
 import Preload from "./layouts/Preload";
+import { Toaster } from "sonner";
 
 function App() {
   const [active, setActive] = useState("home");
@@ -26,7 +26,7 @@ function App() {
       ) : (
         <div>
           <Header setActive={setActive} active={active} />
-          <ToastContainer position="top-right" />
+          <Toaster position="bottom-right" />
           <Routes>
             <Route path="/" element={<Home setActive={setActive} />} />
             <Route path="/detail/:id" element={<Detail />} />

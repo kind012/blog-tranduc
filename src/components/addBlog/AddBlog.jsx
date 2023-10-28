@@ -12,7 +12,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import UploadFile from "../uploadFile/UploadFile";
-import { toast } from "react-toastify";
+import { toast } from "sonner";
 import PropTypes from "prop-types";
 
 const initialState = {
