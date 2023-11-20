@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import Footer from "../layouts/Footer";
 import { collection, deleteDoc, doc, onSnapshot } from "firebase/firestore";
+import { Footer } from "../sections";
 import { db } from "../firebase/firebase";
-import BlogSection from "../layouts/BlogSection";
 import { toast } from "sonner";
+import Preload from "../components/Preload";
+import BlogSection from "../sections/BlogSection";
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
@@ -88,7 +89,9 @@ const Home = () => {
           <div className="lg:pt-[15px]">
             {loading ? (
               <div className="flex items-center justify-center">
-                <span>loading...</span>
+                <span>
+                  <Preload />
+                </span>
               </div>
             ) : (
               <BlogSection

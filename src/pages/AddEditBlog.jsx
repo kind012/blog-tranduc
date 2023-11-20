@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { db } from "../../firebase/firebase";
+import { db } from "../firebase/firebase";
 import ReactTagInput from "@pathofdev/react-tag-input";
 import "@pathofdev/react-tag-input/build/index.css";
 import { useNavigate, useParams } from "react-router-dom";
@@ -11,7 +11,7 @@ import {
   serverTimestamp,
   updateDoc,
 } from "firebase/firestore";
-import UploadFile from "../uploadFile/UploadFile";
+import UploadFile from "../components/uploadFile/UploadFile";
 import { toast } from "sonner";
 import PropTypes from "prop-types";
 
@@ -26,7 +26,6 @@ const categoryOption = ["Technology", "Dev", "Sport", "Program Language"];
 
 const AddEditBlog = ({ setActive }) => {
   const [form, setForm] = useState(initialState);
-  const [file, setFile] = useState(null);
   const [progress, setProgress] = useState(null);
 
   const { id } = useParams();
@@ -34,6 +33,7 @@ const AddEditBlog = ({ setActive }) => {
   const navigate = useNavigate();
 
   const { title, tags, category, description } = form;
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -150,12 +150,7 @@ const AddEditBlog = ({ setActive }) => {
               onChange={handleChange}
             />
           </div>
-          <UploadFile
-            file={file}
-            setProgress={setProgress}
-            setForm={setForm}
-            setFile={setFile}
-          />
+          <UploadFile setProgress={setProgress} setForm={setForm} />
           <div className="flex items-center justify-center">
             <button
               className="text-white hover:duration-300 bg-black hover:bg-white hover:text-black font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 border-[2px] "

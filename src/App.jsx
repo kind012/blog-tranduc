@@ -1,14 +1,11 @@
-import Home from "./pages/Home";
-import Detail from "./pages/Detail";
-import AddEditBlog from "./components/addBlog/AddBlog";
-import NotFound from "./pages/NotFound";
-import { Routes, Route } from "react-router-dom";
-
-import Header from "./layouts/Header";
+import { Header } from "./sections";
 import { useEffect, useState } from "react";
-import "./utils/fontawesome";
-import Preload from "./layouts/Preload";
+import { Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
+import { Home, Detail, NotFound, AddEditBlog } from "./pages/index";
+import Preload from "./components/Preload";
+
+import "./utils/fontawesome";
 
 function App() {
   const [active, setActive] = useState("home");

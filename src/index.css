@@ -55,4 +55,23 @@
   .btn {
     @apply py-2 font-medium bg-blue-500 border-2 rounded-md px-9 rounded-br-3xl;
   }
+  .loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    background: linear-gradient(0deg, rgba(255, 61, 0, 0.2) 33%, #ff3d00 100%);
+    animation: rotation 1s linear infinite;
+    margin: 0 auto;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }

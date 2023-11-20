@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { storage } from "../../firebase/firebase";
 import { toast } from "sonner";
@@ -6,7 +6,9 @@ import { toast } from "sonner";
 import PropTypes from "prop-types";
 
 const UploadFile = (props) => {
-  const { file, setProgress, setForm, setFile } = props;
+  const [file, setFile] = useState(null);
+
+  const { setProgress, setForm } = props;
 
   useEffect(() => {
     const upFile = () => {
